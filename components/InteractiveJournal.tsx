@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { JournalEntry } from '../types';
 
-const initialEntry: JournalEntry = {
+interface InteractiveJournalProps {
+    initialEntries?: JournalEntry[];
+    initialNewEntry?: Omit<JournalEntry, 'id' | 'time'>;
+}
+
+const defaultInitialEntry: JournalEntry = {
     id: 1,
     time: "08:00",
     bt: "130/85",
@@ -13,17 +18,29 @@ const initialEntry: JournalEntry = {
     notes: "Patienten klager over tiltagende smerter. Bugvæg spændt."
 };
 
-const InteractiveJournal: React.FC = () => {
-    const [entries, setEntries] = useState<JournalEntry[]>([initialEntry]);
-    const [newEntry, setNewEntry] = useState<Omit<JournalEntry, 'id' | 'time'>>({
-        bt: '110/70',
-        pulse: '110',
-        rf: '22',
-        spO2: '94',
-        temp: '38.6',
-        vas: '8',
-        notes: ''
-    });
+const defaultNewEntry: Omit<JournalEntry, 'id' | 'time'> = {
+    bt: '110/70',
+    pulse: '110',
+    rf: '22',
+    spO2: '94',
+    temp: '38.6',
+    vas: '8',
+    notes: 'Patienten er nu mere smertepåvirket og utilpas.'
+};
+
+
+const InteractiveJournal: React.FC<InteractiveJournalProps> = ({
+    initialEntries = [defaultInitialEntry],
+    initialNewEntry = defaultNewEntry
+}) => {
+    const [entries, setEntries] = useState<JournalEntry[]>(initialEntries);
+    const [newEntry, setNewEntry] = useState(initialNewEntry);
+
+    useEffect(() => {
+        setEntries(initialEntries);
+        setNewEntry(initialNewEntry);
+    }, [initialEntries, initialNewEntry]);
+
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -45,7 +62,7 @@ const InteractiveJournal: React.FC = () => {
 
     return (
         <div className="mt-6 border border-slate-200 rounded-lg p-4">
-            <h3 className="text-lg font-bold text-slate-700 mb-4">Opvågningsjournal</h3>
+            <h3 className="text-lg font-bold text-slate-700 mb-4">Journal</h3>
             
             {/* Journal Table */}
             <div className="overflow-x-auto">

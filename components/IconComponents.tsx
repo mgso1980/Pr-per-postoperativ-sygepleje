@@ -87,3 +87,13 @@ export const ChatBubbleLeftRightIcon = () => (
         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193l-3.72-3.72a1.125 1.125 0 00-1.59.056l-.533.534a1.125 1.125 0 01-1.59 0l-3.182-3.182a1.125 1.125 0 00-1.59 0l-.533.534a1.125 1.125 0 01-1.59 0l-3.72-3.72A1.125 1.125 0 002.25 8.511v-4.286c0-1.136.847-2.1 1.98-2.193l3.72 3.72a1.125 1.125 0 001.59-.056l.533-.534a1.125 1.125 0 011.59 0l3.182 3.182a1.125 1.125 0 001.59 0l.533-.534a1.125 1.125 0 011.59 0l3.72 3.72z" />
     </svg>
 );
+export const VideoCameraIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9A2.25 2.25 0 004.5 18.75z" />
+    </svg>
+);
+export const ArrowUpTrayIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+    </svg>
+);

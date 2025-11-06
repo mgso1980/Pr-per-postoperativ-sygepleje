@@ -33,3 +33,12 @@ export interface ChecklistTask {
   text: string;
   targetColumn: 'tjek-ind' | 'time-out' | 'tjek-ud';
 }
+
+export interface VitalSigns {
+  bt: string;
+  pulse: string;
+  rf: string;
+  spO2: string;
+  temp: string;
+  status: 'Stabil' | 'Forværret' | 'Kritisk';
+}

@@ -4,6 +4,7 @@ import LearningCard from './LearningCard';
 import { ClipboardCheckIcon, ChartBarIcon, NoSymbolIcon, AbcdeIcon, QuestionMarkCircleIcon } from './IconComponents';
 import Quiz from './Quiz';
 import { preoperativeQuiz } from '../data/quizData';
+import InteractiveAbcde from './InteractiveAbcde';
 
 interface PreoperativePhaseProps {
     onQuizComplete: (isCompleted: boolean) => void;
@@ -76,15 +77,8 @@ const PreoperativePhase: React.FC<PreoperativePhaseProps> = ({ onQuizComplete })
         <p className="text-sm">Samme regler gælder, men patienter med ileus, tarmobstruktion eller øget aspirationsrisiko anses aldrig for at være fastende.</p>
       </LearningCard>
 
-      <LearningCard title="ABCDE Vurdering" icon={<AbcdeIcon />} className="md:col-span-2">
-        <p>En systematisk gennemgang af patienten for at identificere og håndtere livstruende tilstande præoperativt.</p>
-        <ul className="space-y-2 mt-2">
-          <li><strong className="text-teal-700">A - Airway:</strong> Vurdering af luftveje, Mallampati-score, tandstatus. Afgørende for valg af anæstesi.</li>
-          <li><strong className="text-teal-700">B - Breathing:</strong> Lungefunktion, rygerstatus, BMI, allergi. Optimer behandling af lungesygdom.</li>
-          <li><strong className="text-teal-700">C - Circulation:</strong> Puls, BT, kapillærrespons, hjertefunktion (iskæmi, arytmi).</li>
-          <li><strong className="text-teal-700">D - Disability:</strong> Neurologisk status (GCS), blodsukker (BS), psykisk tilstand, alkohol/medicinforbrug.</li>
-          <li><strong className="text-teal-700">E - Exposure:</strong> Temperatur, smerter, faste, lejring, blodprøver, hygiejne.</li>
-        </ul>
+      <LearningCard title="Interaktiv ABCDE Vurdering" icon={<AbcdeIcon />} className="md:col-span-2">
+        <InteractiveAbcde />
       </LearningCard>
       
       <LearningCard title="Test din Viden: Præ-operativ" icon={<QuestionMarkCircleIcon />} className="lg:col-span-3">
