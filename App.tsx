@@ -7,6 +7,7 @@ import PostoperativePhase from './components/PostoperativePhase';
 import CaseWorkPhase from './components/CaseWorkPhase';
 import ToolsAndCommunicationPhase from './components/ToolsAndCommunicationPhase';
 import SimulationPhase from './components/SimulationPhase';
+import GlossaryPhase from './components/GlossaryPhase';
 import { StethoscopeIcon } from './components/IconComponents';
 import ProgressIndicator from './components/ProgressIndicator';
 
@@ -18,6 +19,7 @@ const App: React.FC = () => {
     [Phase.POST]: false,
     [Phase.CASE]: false,
     [Phase.TOOLS]: false,
+    [Phase.GLOSSARY]: false,
     [Phase.SIMULATION]: false,
   });
 
@@ -37,6 +39,8 @@ const App: React.FC = () => {
         return <CaseWorkPhase onComplete={(isCompleted) => handlePhaseComplete(Phase.CASE, isCompleted)} />;
       case Phase.TOOLS:
         return <ToolsAndCommunicationPhase onComplete={(isCompleted) => handlePhaseComplete(Phase.TOOLS, isCompleted)} />;
+      case Phase.GLOSSARY:
+        return <GlossaryPhase onComplete={(isCompleted) => handlePhaseComplete(Phase.GLOSSARY, isCompleted)} />;
       case Phase.SIMULATION:
         return <SimulationPhase onComplete={(isCompleted) => handlePhaseComplete(Phase.SIMULATION, isCompleted)} />;
       default:
@@ -64,7 +68,7 @@ const App: React.FC = () => {
         <ProgressIndicator activePhase={activePhase} completionStatus={completionStatus} />
 
         <div className="bg-white rounded-lg shadow-sm p-2 md:p-3 mb-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2">
             <TabButton
               label="Præ-operativ fase"
               isActive={activePhase === Phase.PRE}
@@ -89,6 +93,11 @@ const App: React.FC = () => {
               label="Værktøjer"
               isActive={activePhase === Phase.TOOLS}
               onClick={() => setActivePhase(Phase.TOOLS)}
+            />
+             <TabButton
+              label="Opslagsværk"
+              isActive={activePhase === Phase.GLOSSARY}
+              onClick={() => setActivePhase(Phase.GLOSSARY)}
             />
              <TabButton
               label="Simulationstræning"

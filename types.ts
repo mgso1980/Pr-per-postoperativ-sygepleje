@@ -4,6 +4,7 @@ export enum Phase {
   POST,
   CASE,
   TOOLS,
+  GLOSSARY,
   SIMULATION,
 }
 

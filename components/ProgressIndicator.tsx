@@ -14,6 +14,7 @@ const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({ activePhase, comp
     { phase: Phase.POST, label: "Post-operativ" },
     { phase: Phase.CASE, label: "Casearbejde" },
     { phase: Phase.TOOLS, label: "Værktøjer" },
+    { phase: Phase.GLOSSARY, label: "Opslagsværk" },
     { phase: Phase.SIMULATION, label: "Simulation" },
   ];
 
