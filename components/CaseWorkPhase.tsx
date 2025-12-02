@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import LearningCard from './LearningCard';
 import { TeamIcon, CheckCircleIcon } from './IconComponents';
@@ -36,6 +37,26 @@ const caseQuiz = [
         ],
         correctAnswer: 2,
         feedback: "Korrekt! Med hans svære KOL er han ekstremt sårbar over for lungekomplikationer. Smerter forhindrer ham i at hoste og trække vejret dybt, hvilket fører til sekretstagnation og pneumoni. Aggressiv lungefysioterapi, smertebehandling og mobilisering er altafgørende."
+    },
+    {
+        question: "På 2. dagen virker Hr. Svendsen motorisk urolig, han roder i sengetøjet og ved ikke, hvor han er. Hvad er den mest sandsynlige sygeplejefaglige vurdering?",
+        options: [
+            "Han er ved at udvikle demens, hvilket er normalt i den alder.",
+            "Han har udviklet postoperativt delirium (akut konfusion), sandsynligvis udløst af smerter, infektion eller medicin.",
+            "Han er bare sur over hospitalsmaden."
+        ],
+        correctAnswer: 1,
+        feedback: "Præcis. Delirium er en hyppig, akut tilstand hos ældre efter kirurgi. Det er IKKE demens, men en reversibel tilstand, der kræver opsporing af den udløsende årsag (f.eks. urinvejsinfektion, dehydrering eller obstipation)."
+    },
+    {
+        question: "Hr. Svendsen skal snart udskrives. Han bor i et hus med trapper til soveværelset på 1. sal. Hvad er en kritisk handling i udskrivelsesplanlægningen?",
+        options: [
+            "Vi sender ham bare hjem, hans kone må hjælpe ham op ad trappen.",
+            "Vi bestiller en kørestol, så han slet ikke skal gå.",
+            "Der skal sendes en plejeforløbsplan/besked til kommunen mhp. visitatorvurdering af hjemmet (fx seng i stueplan eller hjælpemidler), da trapper er en risiko."
+        ],
+        correctAnswer: 2,
+        feedback: "Korrekt. Tværsektorielt samarbejde er afgørende. En nyopereret hoftepatient med KOL og balanceproblemer kan ikke sikkert håndtere trapper uden vurdering og hjælpemidler."
     }
 ];
 

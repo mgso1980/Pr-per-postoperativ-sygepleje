@@ -4,368 +4,223 @@ import { Question } from '../types';
 export const preoperativeQuiz: Question[] = [
   {
     id: 1,
-    question: "Hvad er det primære formål med at give en patient 200 ml sukkerholdig væske 2 timer før en elektiv operation?",
+    question: "Du modtager en 72-årig kvinde til elektiv tarmkirurgi. Hun har fastet fra midnat, men drak et glas æblejuice kl. 06.00. Anæstesien er planlagt til kl. 08.00. Hvordan forholder du dig til fastereglerne?",
     options: [
-      "At slukke patientens tørst.",
-      "At reducere postoperativ kvalme og insulinresistens.",
-      "At give patienten ekstra energi til operationen.",
-      "At teste om patienten har overholdt fastereglerne."
+      "Operationen må aflyses, da hun ikke har overholdt 6-timers reglen for faste.",
+      "Det er acceptabelt. Klare væsker (som æblejuice) er tilladt indtil 2 timer før anæstesi.",
+      "Du skal straks give hende aktivt kul for at absorbere væsken.",
+      "Du bør sætte en ventrikelsonde for at tømme maven før hun køres ned."
     ],
     correctAnswer: 1,
-    feedback: "Korrekt! Indtag af sukkerholdig væske før operation modvirker kroppens stressrespons, reducerer insulinresistens og kan mindske postoperativ kvalme."
+    feedback: "Korrekt. Moderne fasteregler tillader klare væsker indtil 2 timer før operation for at undgå dehydrering og øge velbefindende, uden at øge aspirationsrisikoen signifikant."
   },
   {
     id: 2,
-    question: "Under hvilken omstændighed kan et informeret samtykke tilsidesættes?",
+    question: "En patient skal opereres akut for et bristet aortaaneurisme (livstruende). Han er bevidstløs, og der er ingen pårørende til stede. Hvordan sikres det juridiske samtykke til operationen?",
     options: [
-      "Hvis patienten er meget nervøs.",
-      "Hvis kirurgen mener, det er bedst.",
-      "Ved vital indikation, hvor operation er akut nødvendig.",
-      "Hvis patientens familie giver samtykke."
+      "Kirurgen må ikke operere uden samtykke fra en værge eller politiet.",
+      "Sygeplejersken kan underskrive samtykket på patientens vegne.",
+      "Ved øjeblikkeligt livstruende behov (vital indikation) kræves ikke informeret samtykke for at handle.",
+      "Man skal vente til patienten vågner op og selv kan tage stilling."
     ],
     correctAnswer: 2,
-    feedback: "Helt rigtigt. Ved en livstruende tilstand (vital indikation), hvor der ikke er tid til at indhente samtykke, kan man handle for at redde patientens liv."
+    feedback: "Præcis. Jf. Sundhedsloven kan kravet om informeret samtykke fraviges ved øjeblikkeligt behandlingsbehov, hvor patienten varigt eller midlertidigt (fx bevidstløshed) ikke kan samtykke."
   },
   {
     id: 3,
-    question: "Hvad står 'A' for i den præoperative ABCDE-vurdering?",
+    question: "Du vurderer en præoperativ patient og bemærker, at han har en Mallampati-score på 4. Hvilken klinisk betydning har dette fund for det videre forløb?",
     options: [
-      "Anæstesi",
-      "Allergi",
-      "Airway (Luftveje)",
-      "Antibiotika"
+      "Det indikerer, at patienten er i høj risiko for postoperativ kvalme (PONV).",
+      "Det betyder, at intubation kan være meget vanskelig, og anæstesilægen skal være forberedt på 'vanskelig luftvej'.",
+      "Det er et tegn på dårlig ernæringstilstand.",
+      "Det har ingen betydning for anæstesien, kun for tandlægen."
     ],
-    correctAnswer: 2,
-    feedback: "Korrekt! 'A' står for Airway. En fri luftvej er den mest akutte prioritet. Vurderingen inkluderer bl.a. Mallampati-score for at forudse eventuelle intubationsvanskeligheder."
+    correctAnswer: 1,
+    feedback: "Korrekt. Mallampati-score (I-IV) vurderer synligheden af svælgstrukturer. En score på 4 betyder, at man kun ser den hårde gane, hvilket varsler potentielt svær intubation."
   },
   {
     id: 4,
-    question: "Hvor længe skal en patient faste fra fast føde før en elektiv operation?",
+    question: "En patient med Type 2 diabetes er fastende til operation. Han spørger, om han skal tage sin morgenmedicin (antidiabetika/insulin). Hvad er det generelle princip?",
     options: [
-      "2 timer",
-      "4 timer",
-      "6 timer",
-      "12 timer"
+      "Han skal tage dobbelt dosis for at modvirke stress-responset.",
+      "Han skal tage sin medicin som normalt med lidt vand.",
+      "Peroral antidiabetika og hurtigtvirkende insulin pauseres oftest under faste for at undgå hypoglykæmi (lavt blodsukker).",
+      "Det er ligegyldigt, da anæstesien styrer det hele."
     ],
     correctAnswer: 2,
-    feedback: "Ja, det er korrekt. Mavesækken skal være tom for fast føde i mindst 6 timer før bedøvelse for at minimere risikoen for aspiration."
+    feedback: "Rigtigt. Da patienten ikke spiser (faster), falder insulinbehovet. At tage normal medicin vil medføre stor risiko for alvorlig hypoglykæmi under operationen."
   },
   {
     id: 5,
-    question: "Hvilken af følgende patienter har den højeste anæstesiologiske risiko ifølge ASA-klassifikationen?",
+    question: "Du skal ASA-klassificere en 68-årig mand. Han har stabil angina pectoris (hjertekrampe ved anstrengelse) og velreguleret diabetes. Han bliver forpustet, når han går op til 1. sal. Hvilken gruppe tilhører han?",
     options: [
-      "ASA I: En rask, ikke-ryger patient.",
-      "ASA II: En patient med velreguleret diabetes.",
-      "ASA III: En patient med tidligere hjerteanfald for over 3 måneder siden.",
-      "ASA IV: En patient med sepsis og påvirket organfunktion."
+      "ASA I (Rask patient)",
+      "ASA II (Let systemisk sygdom uden funktionsbegrænsning)",
+      "ASA III (Alvorlig systemisk sygdom med funktionsbegrænsning)",
+      "ASA IV (Livstruende systemisk sygdom)"
     ],
-    correctAnswer: 3,
-    feedback: "Korrekt! ASA IV beskriver en patient med en alvorlig systemisk sygdom, som er en konstant trussel mod livet. Dette udgør den højeste risiko blandt valgmulighederne."
+    correctAnswer: 2,
+    feedback: "Korrekt. Han har alvorlig sygdom (Angina+Diabetes), der begrænser hans aktivitet (forpustet ved trappegang), men som ikke er akut livstruende i hvile."
   },
   {
     id: 6,
-    question: "Hvad er et vigtigt formål med den præoperative information til patienten?",
+    question: "Hvorfor anbefales præoperativ 'kulhydrat-loading' (en sukkerholdig drik) til ikke-diabetikere 2 timer før operationen?",
     options: [
-        "At give patienten en detaljeret lektion i kirurgisk anatomi.",
-        "At reducere angst og give patienten handlekompetence.",
-        "At få patienten til at underskrive samtykke så hurtigt som muligt.",
-        "At overbevise patienten om at vælge den dyreste behandling."
+      "For at patienten ikke skal være tørstig.",
+      "For at dæmpe patientens angst.",
+      "For at skifte kroppens stofskifte fra en nedbrydende (katabol) til en opbyggende (anabol) tilstand og mindske postoperativ insulinresistens.",
+      "For at øge mavesækkens indhold, så den er nemmere at operere på."
     ],
-    correctAnswer: 1,
-    feedback: "Korrekt! God information reducerer angst, øger patientens tryghed og giver dem en følelse af kontrol og medansvar for forløbet."
+    correctAnswer: 2,
+    feedback: "Meget flot. Det reducerer det kirurgiske stress-respons, mindsker muskeltab og bedrer restitutionen efter operationen."
   },
   {
     id: 7,
-    question: "Hvorfor er præoperativ helkropsvask med desinficerende sæbe vigtig?",
+    question: "En patient er i behandling med blodfortyndende medicin (Marevan). INR er 3,2 på operationsdagen. Hvilken konsekvens har dette typisk for en planlagt større operation?",
     options: [
-        "For at patienten dufter godt på operationsstuen.",
-        "For at reducere hudens normale bakterieflora og nedsætte infektionsrisikoen.",
-        "Det er kun nødvendigt for patienter med kendte hudproblemer.",
-        "For at fjerne hår på kroppen."
+      "Ingen, man opererer bare forsigtigt.",
+      "Operationen må oftest udsættes eller INR skal korrigeres akut, da risikoen for ukontrollabel blødning er for stor.",
+      "Man giver bare mere blod undervejs.",
+      "Det er godt, for så får patienten ikke blodpropper."
     ],
     correctAnswer: 1,
-    feedback: "Præcis! Formålet er at minimere antallet af mikroorganismer på huden for at reducere risikoen for postoperativ sårinfektion (SSI)."
+    feedback: "Korrekt. En INR på 3,2 betyder, at blodet størkner meget langsomt. Ved større kirurgi tilstræbes ofte en INR < 1,5-2,0 afhængigt af indgrebet."
   },
   {
     id: 8,
-    question: "Hvilken type medicin skal en patient typisk pausere før en operation på grund af øget blødningsrisiko?",
+    question: "Hvad er det vigtigste formål med at undervise patienten i mobiliseringsteknik og smertebehandling ALLEREDE før operationen (præoperativt)?",
     options: [
-        "Paracetamol.",
-        "Antihypertensiva (blodtryksnedsættende).",
-        "Antikoagulantia (blodfortyndende medicin).",
-        "Antibiotika."
+      "At få tiden til at gå.",
+      "At patienten er mere motiveret og lærer bedre, når de er smertefrie og kognitivt friske, hvilket forbedrer det postoperative forløb.",
+      "At skræmme patienten til at makke ret.",
+      "Det er et lovkrav uden klinisk betydning."
     ],
-    correctAnswer: 2,
-    feedback: "Korrekt. Blodfortyndende medicin (f.eks. Marevan, Eliquis, Xarelto, Hjertemagnyl) pauseres ofte i en periode op til operation for at mindske blødningsrisikoen."
+    correctAnswer: 1,
+    feedback: "Præcis. Postoperativt er patienten ofte træt, smertepåvirket eller påvirket af medicin, hvilket gør indlæring svær. Forberedelse skaber tryghed og 'empowerment'."
   },
   {
     id: 9,
-    question: "Hvilket forebyggende tiltag anvendes ofte præoperativt for at mindske risikoen for dyb venetrombose (DVT)?",
+    question: "Hvorfor er det vigtigt, at patienten fjerner neglelak og makeup før operationen?",
     options: [
-        "At patienten ligger helt stille i sengen.",
-        "At give patienten en stor dosis væske.",
-        "At give patienten TED-strømper (støttestrømper) og evt. blodfortyndende medicin.",
-        "At hæve fodenden af sengen."
+      "For at undgå, at det smitter af på det sterile udstyr.",
+      "Det er udelukkende et hygiejnisk princip for at undgå bakterier.",
+      "For at personalet kan observere patientens naturlige hudfarve og tegn på cyanose (iltmangel).",
+      "For at patienten ser neutral ud under operationen."
     ],
     correctAnswer: 2,
-    feedback: "Ja, støttestrømper og/eller lavmolekylært heparin gives ofte for at forbedre blodcirkulationen i benene og forebygge blodpropper."
+    feedback: "Korrekt. Observation af hud og slimhinder er en vigtig del af den kliniske overvågning (ABCDE - Circulation/Breathing), selvom vi har elektronisk overvågning."
   },
   {
     id: 10,
-    question: "Hvad kan være en effektiv sygeplejeintervention til en meget angst patient præoperativt?",
+    question: "Under den præoperative identifikation opdager du, at patienten siger, han skal opereres i højre knæ, men i journalen står der venstre knæ. Hvad gør du?",
     options: [
-        "At fortælle patienten, at der ikke er noget at være bange for.",
-        "At undgå at tale om operationen.",
-        "Aktiv lytning, anerkendelse af følelser og eventuelt beroligende medicin (præmedicin) efter ordination.",
-        "At lade patienten være alene med sine tanker."
+      "Stoler på patienten, da det er hans krop.",
+      "Stoler på journalen, da patienten sikkert er nervøs.",
+      "Stopper processen øjeblikkeligt. Operationen må ikke gå i gang, før uoverensstemmelsen er afklaret med kirurgen.",
+      "Vælger det knæ, der ser mest hævet ud."
     ],
     correctAnswer: 2,
-    feedback: "Helt rigtigt. At anerkende patientens angst, lytte aktivt og tilbyde information og eventuelt ordineret præmedicin er centrale sygeplejehandlinger for at skabe tryghed."
+    feedback: "Helt rigtigt. Dette er et 'Stop'-moment. Uoverensstemmelser om side/organ skal altid afklares før anæstesi for at forhindre operation på forkert sted."
   }
 ];
 
 export const peroperativeQuiz: Question[] = [
-  {
-    id: 1,
-    question: "Hvad er formålet med 'Time Out' i 'Sikker Kirurgi'-tjeklisten?",
-    options: [
-      "At give kirurgen en kort pause.",
-      "At hele teamet bekræfter korrekt patient, indgreb og operationssted lige før incision.",
-      "At tjekke om patienten er faldet i søvn.",
-      "At dokumentere de anvendte instrumenter."
-    ],
-    correctAnswer: 1,
-    feedback: "Korrekt! 'Time Out' er en kritisk sikkerhedsprocedure, hvor hele teamet pauser for verbalt at bekræfte de vigtigste detaljer og sikre, at alle er enige."
-  },
-  {
-    id: 2,
-    question: "Hvilken type anæstesi injiceres direkte i subarachnoidalrummet?",
-    options: [
-      "Generel anæstesi",
-      "Epidural anæstesi",
-      "Lokal anæstesi",
-      "Spinal anæstesi"
-    ],
-    correctAnswer: 3,
-    feedback: "Ja, det er rigtigt. Ved spinal anæstesi injiceres lokalanæstetika i cerebrospinalvæsken i subarachnoidalrummet, hvilket giver en hurtig og effektiv blokade."
-  },
-  {
-    id: 3,
-    question: "Hvem er IKKE en standard del af det peroperative team på en operationsstue?",
-    options: [
-      "Anæstesisygeplejerske",
-      "Kirurg",
-      "Patientens praktiserende læge",
-      "Operationssygeplejerske"
-    ],
-    correctAnswer: 2,
-    feedback: "Korrekt. Den praktiserende læge er typisk ikke til stede på operationsstuen. Teamet består af specialiseret personale som kirurger og anæstesi- og operationssygeplejersker."
-  },
-  {
-    id: 4,
-    question: "Hvilken fase af 'Sikker Kirurgi'-tjeklisten fokuserer på opsummering af indgrebet og optælling af instrumenter?",
-    options: [
-      "Tjek Ind",
-      "Time Out",
-      "Tjek Ud",
-      "Pre-op"
-    ],
-    correctAnswer: 2,
-    feedback: "Helt rigtigt. 'Tjek Ud' sker, før patienten forlader operationsstuen, og sikrer, at alt er redegjort for, og at den postoperative plan er klar."
-  },
-  {
-    id: 5,
-    question: "Hvad er den primære fordel ved at bruge epidural anæstesi postoperativt?",
-    options: [
-      "Det sikrer, at patienten sover tungt.",
-      "Det giver effektiv og kontinuerlig smertebehandling.",
-      "Det er den billigste form for smertelindring.",
-      "Det fjerner behovet for mobilisering."
-    ],
-    correctAnswer: 1,
-    feedback: "Ja, det er korrekt. Et epiduralkateter kan blive liggende efter operationen og bruges til at administrere smertestillende medicin, hvilket giver en fremragende postoperativ smertekontrol."
-  },
-  {
-    id: 6,
-    question: "Hvad er et grundlæggende princip for at opretholde sterilitet på en operationsstue?",
-    options: [
-        "Alle overflader i rummet er sterile.",
-        "Sterilt udstyr må kun berøres af sterile hænder eller instrumenter.",
-        "Det er okay at vende ryggen til det sterile felt kortvarigt.",
-        "Man må gerne række en usteril genstand henover et sterilt felt."
-    ],
-    correctAnswer: 1,
-    feedback: "Korrekt! Princippet 'steril til steril' er altafgørende. Alt, der kommer i kontakt med det sterile felt, skal selv være sterilt for at forhindre kontaminering."
-  },
-  {
-    id: 7,
-    question: "Hvorfor er det vigtigt at forebygge hypotermi (lav kropstemperatur) hos patienten under operationen?",
-    options: [
-        "Det er primært for patientens komfort.",
-        "Hypotermi øger risikoen for blødning, infektion og forsinket sårheling.",
-        "Det får patienten til at sove dybere.",
-        "Det har ingen betydning for operationsresultatet."
-    ],
-    correctAnswer: 1,
-    feedback: "Ja, det er rigtigt. At holde patienten normoterm (normal temperatur) er vigtigt, da hypotermi kan føre til alvorlige komplikationer som øget blødningstendens og nedsat immunforsvar."
-  },
-  {
-    id: 8,
-    question: "Hvad er en potentiel komplikation ved forkert lejring af patienten på operationslejet?",
-    options: [
-        "Patienten sover dårligere.",
-        "Nerve- og trykskader.",
-        "Kirurgen kan ikke se ordentligt.",
-        "Anæstesien virker ikke korrekt."
-    ],
-    correctAnswer: 1,
-    feedback: "Korrekt! Forkert eller langvarig lejring kan føre til tryk på nerver og væv, hvilket kan resultere i permanente skader og tryksår. Korrekt lejring er en essentiel sygeplejeopgave."
-  },
-  {
-    id: 9,
-    question: "Hvilken parameter overvåges IKKE rutinemæssigt under generel anæstesi?",
-    options: [
-        "Blodtryk og puls.",
-        "Iltmætning (SpO2).",
-        "Blodsukker.",
-        "End-tidal CO2 (kapnografi)."
-    ],
-    correctAnswer: 2,
-    feedback: "Helt rigtigt. Mens blodsukker kan måles ved specifik indikation (f.eks. hos diabetikere), er det ikke en standard, kontinuerlig overvågning for alle patienter, modsat de andre vitale parametre."
-  },
-  {
-    id: 10,
-    question: "Hvad er en primær opgave for den usterile (koordinerende) operationssygeplejerske?",
-    options: [
-        "At assistere kirurgen direkte ved operationssåret.",
-        "At dokumentere forløbet, hente ekstra udstyr og sikre kommunikation.",
-        "At administrere anæstesimidler.",
-        "At operere selvstændigt."
-    ],
-    correctAnswer: 1,
-    feedback: "Ja, den usterile sygeplejerske er bindeleddet mellem det sterile felt og resten af verden. De varetager logistik, dokumentation og kommunikation for at sikre et flydende og sikkert forløb."
-  }
+    {
+      id: 1,
+      question: "Hvad er den primære sikkerhedsmæssige årsag til, at 'Time Out' skal udføres umiddelbart før incision (knivtid), når hele teamet er samlet?",
+      options: [
+          "For at sikre, at kirurgen har vasket hænder korrekt.",
+          "For at skabe et 'Point of No Return', hvor hele teamet irreversibelt bekræfter patient-ID, procedure og sted for at forhindre 'Wrong Site Surgery'.",
+          "For at anæstesipersonalet kan nå at give den sidste dosis antibiotika.",
+          "Det er primært en social seance for at styrke teamånden."
+      ],
+      correctAnswer: 1,
+      feedback: "Korrekt. Time Out er den sidste barriere, før en uigenkaldelig handling (snittet) foretages. Det sikrer fælles mental model hos hele teamet."
+    },
+    {
+      id: 2,
+      question: "Du lejrer en patient i rygleje med armene ud til siden på armborde. Hvilken nerve ved albuen er særligt udsat for tryk, hvis den ikke beskyttes korrekt?",
+      options: [
+          "N. ischiadicus (Iskias-nerven).",
+          "N. opticus (Synsnerven).",
+          "N. ulnaris (som giver 'klohånd' og snurren i lillefingeren).",
+          "N. olfactorius (Lugtenerven)."
+      ],
+      correctAnswer: 2,
+      feedback: "Rigtigt. N. ulnaris løber meget overfladisk ved albuen ('enkemandsknoen'). Hvis armen ligger hårdt mod underlaget uden polstring, kan det give varige nerveskader."
+    },
+    {
+        id: 3,
+        question: "Ufrivillig peroperativ hypotermi (temp < 36°C) er en hyppig komplikation. Hvorfor er dette en alvorlig fysiologisk risiko i forhold til hæmostasen?",
+        options: [
+            "Kulde får blodkarrene til at trække sig sammen, så kirurgen ikke kan se dem.",
+            "Hypotermi påvirker enzymprocesserne i koagulationskaskaden negativt og hæmmer blodpladefunktionen, hvilket øger blødningsrisikoen markant.",
+            "Det får patienten til at vågne, da stofskiftet stiger.",
+            "Det har ingen betydning for blødning, kun for sårheling."
+        ],
+        correctAnswer: 1,
+        feedback: "Præcis. Selv mild hypotermi nedsætter blodets evne til at koagulere, hvilket øger blodtabet og behovet for transfusioner."
+    },
+    {
+        id: 4,
+        question: "Du observerer som cirkulerende sygeplejerske, at kirurgens sterile kittel strejfer lejet, som ikke er sterilt afdækket netop der. Kirurgen bemærker det ikke. Hvad er din pligt?",
+        options: [
+            "Du noterer det i journalen efter operationen.",
+            "Du siger ingenting for ikke at forstyrre kirurgens koncentration.",
+            "Du gør straks opmærksom på bruddet på steriliteten ('Surgical Conscience'), og kittel/ærme skal skiftes, uanset hvor i forløbet I er.",
+            "Du sprayer området med sprit."
+        ],
+        correctAnswer: 2,
+        feedback: "Korrekt. 'Surgical Conscience' betyder, at man altid reagerer på brud på steriliteten for at beskytte patienten mod infektion, uanset hierarki."
+    },
+    {
+        id: 5,
+        question: "Hvad er formålet med den systematiske optælling af instrumenter, servietter og nåle før operationens afslutning (Tjek-ud)?",
+        options: [
+            "For at sikre, at afdelingen ikke mister dyrt udstyr (økonomi).",
+            "For at undgå 'Glemte Sager' (at der efterlades fremmedlegemer i patienten), hvilket er en alvorlig utilsigtet hændelse.",
+            "Det er kun nødvendigt, hvis kirurgen beder om det.",
+            "For at se om operationssygeplejersken kan tælle."
+        ],
+        correctAnswer: 1,
+        feedback: "Meget vigtigt! Glemte servietter eller instrumenter er en alvorlig patientrisiko. Optælling sikrer, at alt, der kom ind, også kommer ud."
+    }
 ];
 
 export const postoperativeQuiz: Question[] = [
-  {
-    id: 1,
-    question: "Hvad er den mest almindelige forkortelse for postoperativ kvalme og opkast?",
-    options: [
-      "POKO",
-      "PK&O",
-      "PONV",
-      "POAV"
-    ],
-    correctAnswer: 2,
-    feedback: "Korrekt! PONV står for 'Post Operative Nausea and Vomiting' og er en meget almindelig komplikation efter anæstesi."
-  },
-  {
-    id: 2,
-    question: "Hvilket af følgende kriterier ville kræve, at en læge vurderer patienten før udskrivelse fra opvågningen?",
-    options: [
-      "Blodtab på 400 ml.",
-      "ASA-score II.",
-      "En ukompliceret 1-times operation.",
-      "Langvarig anæstesi på over 5 timer."
-    ],
-    correctAnswer: 3,
-    feedback: "Helt rigtigt. Langvarig anæstesi (>5 timer) er et kriterium, der kræver en lægelig vurdering, da det øger risikoen for komplikationer."
-  },
-  {
-    id: 3,
-    question: "Hvad er det overordnede mål med effektiv postoperativ smertebehandling?",
-    options: [
-      "At sikre at patienten er helt smertefri.",
-      "At patienten kan sove uforstyrret.",
-      "At muliggøre hurtig mobilisering og rehabilitering.",
-      "At undgå brug af morfin."
-    ],
-    correctAnswer: 2,
-    feedback: "Korrekt. Målet er ikke nødvendigvis total smertefrihed, men at reducere smerterne til et niveau, hvor patienten kan deltage aktivt i sin egen helingsproces, f.eks. ved at trække vejret dybt og komme ud af sengen."
-  },
-  {
-    id: 4,
-    question: "Hvad er 'atelektase'?",
-    options: [
-      "En blodprop i lungen.",
-      "Sammenfald af lungevæv.",
-      "Uregelmæssig hjerterytme.",
-      "Standsning af tarmbevægelse."
-    ],
-    correctAnswer: 1,
-    feedback: "Ja, det er korrekt. Atelektase er, når små dele af lungen klapper sammen. Det er en almindelig postoperativ lungekomplikation, som kan forebygges med dybe vejrtrækninger og mobilisering."
-  },
-  {
-    id: 5,
-    question: "En patient har en score på VAS 6 i hvile. Hvad indikerer dette?",
-    options: [
-      "Ingen smerter.",
-      "Lette smerter.",
-      "Moderate til stærke smerter.",
-      "Patienten er ikke i stand til at score."
-    ],
-    correctAnswer: 2,
-    feedback: "Korrekt. En score på 6 på en Visuel Analog Skala (VAS) fra 0-10 indikerer moderate til stærke smerter, som kræver handling."
-  },
-  {
-    id: 6,
-    question: "Hvorfor er tidlig mobilisering efter en operation så vigtig?",
-    options: [
-        "For at patienten hurtigere kan komme hjem.",
-        "Det har ingen reel betydning, men er en gammel vane.",
-        "For at forebygge lungekomplikationer, DVT og forstoppelse.",
-        "Kun for at træne patientens muskler."
-    ],
-    correctAnswer: 2,
-    feedback: "Korrekt! At komme ud af sengen tidligt fremmer dyb vejrtrækning, stimulerer kredsløbet og tarmfunktionen, hvilket er afgørende for at forebygge mange postoperative komplikationer."
-  },
-  {
-    id: 7,
-    question: "En patient har ikke haft vandladning 6 timer efter operation. Hvad kan dette være et tegn på?",
-    options: [
-        "At patienten er fuldt hydreret.",
-        "Postoperativ urinretention.",
-        "Et normalt postoperativt fænomen.",
-        "At patienten har drukket for lidt kaffe."
-    ],
-    correctAnswer: 1,
-    feedback: "Præcis. Urinretention (manglende evne til at tømme blæren) er en almindelig postoperativ komplikation, ofte pga. anæstesi eller smerter, og det kræver observation og evt. intervention (f.eks. blæreskanning)."
-  },
-  {
-    id: 8,
-    question: "Hvilken patientgruppe er i særlig høj risiko for at udvikle postoperativt delirium?",
-    options: [
-        "Unge, raske atleter.",
-        "Patienter der har fået spinal anæstesi.",
-        "Ældre patienter, især dem med eksisterende kognitiv svækkelse.",
-        "Patienter der er opereret om morgenen."
-    ],
-    correctAnswer: 2,
-    feedback: "Helt rigtigt. Høj alder, demens, infektion, smerter og polyfarmaci er signifikante risikofaktorer for at udvikle postoperativ konfusion eller delirium."
-  },
-  {
-    id: 9,
-    question: "Hvad er et tegn på en begyndende sårinfektion?",
-    options: [
-        "Et sår der er tørt og uden hævelse.",
-        "Let ømhed de første par dage.",
-        "Tiltagende rødme, varme, hævelse og purulent sekretion fra såret.",
-        "At plasteret sidder godt fast."
-    ],
-    correctAnswer: 2,
-    feedback: "Ja, dette er de klassiske inflammationstegn. En infektion vil typisk vise sig ved øget rødme, varme, hævelse, smerte og evt. pus-dannelse et par dage efter operationen."
-  },
-  {
-    id: 10,
-    question: "Hvorfor er det vigtigt, at patienten hurtigt genoptager normal kost og væskeindtag postoperativt?",
-    options: [
-        "For at undgå at hospitalet skal smide mad ud.",
-        "Det er kun vigtigt for patientens velbefindende.",
-        "Fordi det er afgørende for sårheling, immunforsvar og tarmfunktion.",
-        "For at kunne udskrive patienten med det samme."
-    ],
-    correctAnswer: 2,
-    feedback: "Korrekt! Tilstrækkelig ernæring og hydrering er byggestenene for kroppens helingsproces. Det styrker immunforsvaret, fremmer sårheling og hjælper med at genoprette normal tarmfunktion (forebygger ileus)."
-  }
+    {
+        id: 1,
+        question: "Du modtager en patient på opvågningen. Hvad er det absolut første, du tjekker ifølge ABCDE-princippet?",
+        options: ["Om patienten har smerter.", "Om blodtrykket er stabilt.", "Om der er frie luftveje.", "Om forbindingen bløder igennem."],
+        correctAnswer: 2,
+        feedback: "Korrekt. 'A' (Airway) kommer altid først. Uden frie luftveje dør patienten hurtigst, uanset hvordan blodtrykket er."
+    },
+    {
+        id: 2,
+        question: "En patient klager over kvalme (PONV) efter operationen. Hvilken handling er mest relevant (udover medicin)?",
+        options: ["Tvinge patienten til at spise noget.", "Lejre patienten fladt på ryggen.", "Sikre iltilskud og undgå hurtige bevægelser.", "Give patienten en kold klud på maven."],
+        correctAnswer: 2,
+        feedback: "Rigtigt. Iltmangel kan forværre kvalme. Desuden hjælper det at undgå hurtige stillingsskift."
+    },
+    {
+        id: 3,
+        question: "Hvad er en 'VAS-score', og hvad bruges den til?",
+        options: ["Vurdering af søvnkvalitet (1-10).", "Visuel Analog Skala: Patientens egen vurdering af smertens intensitet (0-10).", "Vurdering af appetit.", "En skala for sårheling."],
+        correctAnswer: 1,
+        feedback: "Korrekt. VAS er guldstandarden for smertevurdering. 0 er ingen smerter, 10 er værst tænkelige smerter."
+    },
+    {
+        id: 4,
+        question: "Hvorfor er tidlig mobilisering (at komme ud af sengen) så vigtig postoperativt?",
+        options: ["For at sygeplejersken ikke skal skifte sengetøj.", "Det forebygger lungekomplikationer (f.eks. lungebetændelse) og blodpropper (DVT) samt stimulerer tarmfunktionen.", "Det er kun vigtigt for ortopædkirurgiske patienter.", "Det er det ikke, patienten skal hvile sig i 3 dage."],
+        correctAnswer: 1,
+        feedback: "Meget vigtigt! Sengeleje er farligt. Mobilisering øger lungeventilationen, blodcirkulationen og tarmperistaltikken."
+    },
+    {
+        id: 5,
+        question: "Hvornår må en patient typisk udskrives fra opvågningsafsnittet til stamafdelingen?",
+        options: ["Når kirurgen er gået hjem.", "Når patienten selv siger, han vil hjem.", "Når patienten er stabil respiratorisk og cirkulatorisk (ABC), smertedækket og vågen (fx scoret via et udskrivningsskema).", "Når der mangler sengepladser på opvågningen."],
+        correctAnswer: 2,
+        feedback: "Korrekt. Udskrivelse kræver, at patienten opfylder specifikke sikkerhedskriterier for stabilisering."
+    }
 ];

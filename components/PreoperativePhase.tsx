@@ -1,7 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import LearningCard from './LearningCard';
-import { ClipboardCheckIcon, ChartBarIcon, NoSymbolIcon, AbcdeIcon, QuestionMarkCircleIcon } from './IconComponents';
+import { ClipboardCheckIcon, ChartBarIcon, NoSymbolIcon, AbcdeIcon, QuestionMarkCircleIcon, CheckCircleIcon } from './IconComponents';
 import Quiz from './Quiz';
 import { preoperativeQuiz } from '../data/quizData';
 import InteractiveAbcde from './InteractiveAbcde';
@@ -11,6 +11,13 @@ interface PreoperativePhaseProps {
 }
 
 const PreoperativePhase: React.FC<PreoperativePhaseProps> = ({ onQuizComplete }) => {
+  const [isCompleted, setIsCompleted] = useState(false);
+
+  const handleCompletion = (status: boolean) => {
+    setIsCompleted(status);
+    onQuizComplete(status);
+  };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <LearningCard title="Kerneområder i Accelereret Forløb" icon={<ClipboardCheckIcon />} className="lg:col-span-2">
@@ -82,8 +89,24 @@ const PreoperativePhase: React.FC<PreoperativePhaseProps> = ({ onQuizComplete })
       </LearningCard>
       
       <LearningCard title="Test din Viden: Præ-operativ" icon={<QuestionMarkCircleIcon />} className="lg:col-span-3">
-        <Quiz questions={preoperativeQuiz} onComplete={onQuizComplete} />
+        <Quiz questions={preoperativeQuiz} onComplete={handleCompletion} />
       </LearningCard>
+
+      <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center pt-4 pb-8">
+         {isCompleted ? (
+             <div className="inline-flex items-center space-x-2 text-lg font-semibold text-green-700 bg-green-100 py-3 px-6 rounded-lg animate-fade-in">
+                 <CheckCircleIcon />
+                 <span>Fase gennemført!</span>
+             </div>
+         ) : (
+             <button
+                 onClick={() => handleCompletion(true)}
+                 className="bg-sky-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-sky-700 transition-colors duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+             >
+                 Markér som Gennemført
+             </button>
+         )}
+       </div>
     </div>
   );
 };

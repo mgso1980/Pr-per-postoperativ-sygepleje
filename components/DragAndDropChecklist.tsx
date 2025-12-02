@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { checklistTasks as initialTasks } from '../data/checklistData';
 import { ChecklistTask } from '../types';
@@ -21,7 +22,8 @@ const columnDefs = [
 ];
 
 const DragAndDropChecklist: React.FC = () => {
-    const [tasks, setTasks] = useState<ChecklistTask[]>([]);
+    // Fix: Initialize with shuffled tasks directly so it doesn't start empty (which triggered completion logic)
+    const [tasks, setTasks] = useState<ChecklistTask[]>(() => shuffleArray([...initialTasks]));
     const [columns, setColumns] = useState<Record<string, ChecklistTask[]>>({
         'tjek-ind': [],
         'time-out': [],
@@ -39,11 +41,10 @@ const DragAndDropChecklist: React.FC = () => {
         setIncorrectDrop(null);
     }, []);
 
+    // Effect to check for completion
     useEffect(() => {
-        resetState();
-    }, [resetState]);
-    
-    useEffect(() => {
+        // Only mark as complete if tasks are empty AND we started with tasks (length > 0 check protects against bad data)
+        // Because we initialize tasks in useState, this won't trigger on mount unless initialTasks is actually empty.
         if (tasks.length === 0 && initialTasks.length > 0) {
             setIsComplete(true);
         }
@@ -86,7 +87,7 @@ const DragAndDropChecklist: React.FC = () => {
 
     if (isComplete) {
         return (
-            <div className="mt-4 text-center p-6 bg-green-50 rounded-lg border-2 border-green-200 flex flex-col items-center">
+            <div className="mt-4 text-center p-6 bg-green-50 rounded-lg border-2 border-green-200 flex flex-col items-center animate-fade-in">
                 <CheckCircleIcon />
                 <h3 className="text-xl font-bold text-green-800 mt-2">Godt klaret!</h3>
                 <p className="text-green-700">Du har placeret alle punkterne korrekt i Sikker Kirurgi tjeklisten.</p>

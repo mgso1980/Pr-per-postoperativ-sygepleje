@@ -27,6 +27,51 @@ const App: React.FC = () => {
     setCompletionStatus(prev => ({ ...prev, [phase]: isCompleted }));
   };
 
+  // Map phases to specific color themes
+  const getPhaseTheme = (phase: Phase) => {
+    switch (phase) {
+      case Phase.PRE: return { color: 'sky', label: 'Præ-operativ' };
+      case Phase.PER: return { color: 'orange', label: 'Per-operativ' };
+      case Phase.POST: return { color: 'emerald', label: 'Post-operativ' };
+      case Phase.CASE: return { color: 'indigo', label: 'Casearbejde' };
+      case Phase.TOOLS: return { color: 'slate', label: 'Værktøjer' };
+      case Phase.GLOSSARY: return { color: 'cyan', label: 'Opslagsværk' };
+      case Phase.SIMULATION: return { color: 'rose', label: 'Simulation' };
+      default: return { color: 'teal', label: 'Præ-operativ' };
+    }
+  };
+
+  const currentTheme = getPhaseTheme(activePhase);
+
+  // Dynamic header classes based on theme
+  const getHeaderClass = (color: string) => {
+    const colorMap: Record<string, string> = {
+      sky: 'text-sky-600',
+      orange: 'text-orange-600',
+      emerald: 'text-emerald-600',
+      indigo: 'text-indigo-600',
+      slate: 'text-slate-600',
+      cyan: 'text-cyan-600',
+      rose: 'text-rose-600',
+      teal: 'text-teal-600',
+    };
+    return colorMap[color] || 'text-teal-600';
+  };
+
+  const getBorderClass = (color: string) => {
+     const colorMap: Record<string, string> = {
+      sky: 'border-sky-500',
+      orange: 'border-orange-500',
+      emerald: 'border-emerald-500',
+      indigo: 'border-indigo-500',
+      slate: 'border-slate-500',
+      cyan: 'border-cyan-500',
+      rose: 'border-rose-500',
+      teal: 'border-teal-500',
+    };
+    return colorMap[color] || 'border-teal-500';
+  }
+
   const renderContent = () => {
     switch (activePhase) {
       case Phase.PRE:
@@ -49,60 +94,68 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-800 font-sans">
-      <header className="bg-white shadow-md sticky top-0 z-10">
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans transition-colors duration-500">
+      <header className={`bg-white shadow-md sticky top-0 z-10 border-t-4 ${getBorderClass(currentTheme.color)} transition-colors duration-500`}>
         <div className="container mx-auto px-4 py-4 md:px-8 md:py-5">
           <div className="flex items-center space-x-4">
-            <div className="text-teal-600">
+            <div className={`${getHeaderClass(currentTheme.color)} transition-colors duration-500`}>
               <StethoscopeIcon />
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-slate-700 tracking-tight">
-              Præ-, Per- og Postoperativ Sygepleje
-            </h1>
+            <div>
+              <h1 className={`text-2xl md:text-3xl font-bold tracking-tight transition-colors duration-500 ${getHeaderClass(currentTheme.color)}`}>
+                {currentTheme.label}
+              </h1>
+            </div>
           </div>
-          <p className="text-slate-500 mt-1">Et interaktivt læringsforløb</p>
         </div>
       </header>
       
       <main className="container mx-auto p-4 md:p-8">
         <ProgressIndicator activePhase={activePhase} completionStatus={completionStatus} />
 
-        <div className="bg-white rounded-lg shadow-sm p-2 md:p-3 mb-8">
+        <div className="bg-white rounded-xl shadow-sm p-2 md:p-3 mb-8 border border-slate-100">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2">
             <TabButton
-              label="Præ-operativ fase"
+              label="Præ-operativ"
               isActive={activePhase === Phase.PRE}
               onClick={() => setActivePhase(Phase.PRE)}
+              color="sky"
             />
             <TabButton
-              label="Per-operativ fase"
+              label="Per-operativ"
               isActive={activePhase === Phase.PER}
               onClick={() => setActivePhase(Phase.PER)}
+              color="orange"
             />
             <TabButton
-              label="Post-operativ fase"
+              label="Post-operativ"
               isActive={activePhase === Phase.POST}
               onClick={() => setActivePhase(Phase.POST)}
+              color="emerald"
             />
             <TabButton
               label="Casearbejde"
               isActive={activePhase === Phase.CASE}
               onClick={() => setActivePhase(Phase.CASE)}
+              color="indigo"
             />
              <TabButton
               label="Værktøjer"
               isActive={activePhase === Phase.TOOLS}
               onClick={() => setActivePhase(Phase.TOOLS)}
+              color="slate"
             />
              <TabButton
               label="Opslagsværk"
               isActive={activePhase === Phase.GLOSSARY}
               onClick={() => setActivePhase(Phase.GLOSSARY)}
+              color="cyan"
             />
              <TabButton
-              label="Simulationstræning"
+              label="Simulation"
               isActive={activePhase === Phase.SIMULATION}
               onClick={() => setActivePhase(Phase.SIMULATION)}
+              color="rose"
             />
           </div>
         </div>
@@ -112,7 +165,7 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      <footer className="text-center p-4 text-slate-500 text-sm">
+      <footer className="text-center p-8 text-slate-400 text-sm">
         <p>Udviklet for 5. Semester v. Adjunkt Maria Gravgaard Sørensen</p>
       </footer>
     </div>
